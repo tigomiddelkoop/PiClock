@@ -1,3 +1,7 @@
+This project will be a server hosted program, with an electron app to make it easier to show it on your Pi
+
+The reasoning behind it being server sided is that I can do fun stuff with weather APIs and other thingies :D
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
