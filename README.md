@@ -2,6 +2,8 @@ This project will be a server hosted program, with an electron app to make it ea
 
 The reasoning behind it being server sided is that I can do fun stuff with weather APIs and other thingies :D
 
+I also will try to make the electron app be able to manipulate screen brightness of the Pi Touch screen
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
