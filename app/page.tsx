@@ -9,18 +9,19 @@ export default function Home() {
     const [secondTicker, setSecondTicker] = useState(true);
 
     useEffect(() => {
-        const secondTickerInterval = setInterval(() => {
+        const interval = setInterval(() => {
+            setClock(DateTime.now);
             setSecondTicker(!secondTicker);
         }, 1000)
-        return (() => clearInterval(secondTickerInterval));
-    }, [secondTicker])
+        return (() => clearInterval(interval));
+    }, [secondTicker, date])
 
-    useEffect(() => {
-        const setClockInterval: NodeJS.Timer = setInterval(() => {
-            setClock(DateTime.now);
-        }, 1)
-        return (() => clearInterval(setClockInterval));
-    }, [])
+    // useEffect(() => {
+    //     const setClockInterval: NodeJS.Timer = setInterval(() => {
+    //         setClock(DateTime.now);
+    //     }, 1)
+    //     return (() => clearInterval(setClockInterval));
+    // }, [])
 
     return (
         <main className="bg-black h-full w-full">
@@ -32,10 +33,10 @@ export default function Home() {
                 <div className={"w-10/12 text-center"}>
                     <div className={"flex border-b-8 border-red-700 justify-center"}>
                         <p className={"w-48 text-white text-9xl"}>{date.toFormat("HH")}</p>
-                        <p className={`w-8 ${secondTicker ? "text-gray-800" : "text-white"} text-9xl`}>:</p>
+                        <p className={`w-8 transition ${secondTicker ? "text-gray-700" : "text-white"} text-9xl`}>:</p>
                         <p className={"w-48 text-white text-9xl"}>{date.toFormat("mm")}</p>
-                        <p className={`w-8 ${secondTicker ? "text-gray-800" : "text-white"} text-9xl`}>:</p>
-                        <p className={"w-48 text-white text-9xl"}>{date.toFormat("ss")}</p>
+                        <p className={`w-8 transition ${secondTicker ? "text-gray-700" : "text-white"} text-9xl`}>:</p>
+                        <p className={"w-48 transition text-white text-9xl"}>{date.toFormat("ss")}</p>
                         {/*<p className={`w-8 ${secondTicker ? "text-white" : "text-gray-800"} text-3xl`}>.</p>*/}
                         {/*<p className={"w-48 text-white text-3xl"}>{date.toFormat("SSS")}</p>*/}
                     </div>
